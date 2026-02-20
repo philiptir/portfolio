@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philip Tirlone - Analista de BI</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-300 font-sans selection:bg-cyan-500/30 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-5">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="text-xl font-bold text-slate-100 tracking-tight">
+                PT<span class="text-cyan-400">.</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <button onclick="scrollToId('home')" data-target="home" class="nav-link text-cyan-400 hover:text-cyan-400 transition-colors">Home</button>
+                <button onclick="scrollToId('sobre')" data-target="sobre" class="nav-link text-slate-400 hover:text-cyan-400 transition-colors">Sobre</button>
+                <button onclick="scrollToId('experiencia')" data-target="experiencia" class="nav-link text-slate-400 hover:text-cyan-400 transition-colors">Experiência</button>
+                <button onclick="scrollToId('skills')" data-target="skills" class="nav-link text-slate-400 hover:text-cyan-400 transition-colors">Skills</button>
+                <button onclick="scrollToId('educacao')" data-target="educacao" class="nav-link text-slate-400 hover:text-cyan-400 transition-colors">Educação</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative pt-20">
+        <!-- Abstract Background Elements -->
+        <div class="absolute top-20 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl -z-10 animate-pulse"></div>
+        <div class="absolute bottom-20 left-0 w-72 h-72 bg-blue-600/10 rounded-full blur-3xl -z-10"></div>
+
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 animate-fade-in-up">
+                <div class="inline-block px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-sm font-semibold border border-cyan-500/20">
+                    Disponível para Projetos de BI
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold text-slate-100 tracking-tight">
+                    Philip <br />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                        Tirlone
+                    </span>
+                </h1>
+                <h2 class="text-2xl text-slate-400 font-light">
+                    Analista de Business Intelligence
+                </h2>
+                <p class="text-slate-400 max-w-lg leading-relaxed">
+                    Transformando dados complexos em decisões estratégicas. Especialista em Power BI, SQL Server e Modelagem de Dados com mais de 10 anos de experiência em tecnologia.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="mailto:philip_tirlone@hotmail.com" class="flex items-center gap-2 bg-cyan-600 hover:bg-cyan-500 text-white px-6 py-3 rounded-lg font-medium transition-all hover:shadow-lg hover:shadow-cyan-500/20">
+                        <i data-lucide="mail" class="w-5 h-5"></i> Contatar
+                    </a>
+                    <a href="https://linkedin.com/in/philiptirlone" target="_blank" rel="noreferrer" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 px-6 py-3 rounded-lg font-medium transition-all border border-slate-700">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
+                    </a>
+                    <a href="https://app.xperiun.com/in/philip" target="_blank" rel="noreferrer" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 px-6 py-3 rounded-lg font-medium transition-all border border-slate-700">
+                        <i data-lucide="layout-dashboard" class="w-5 h-5"></i> Portfólio
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-6 pt-8 text-sm text-slate-500">
+                    <span class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i> Santos, SP</span>
+                    <span class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> (13) 98111-2338</span>
+                </div>
+            </div>
+
+            <!-- Decorative Code/Data Visual -->
+            <div class="hidden md:block relative">
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 shadow-2xl relative z-10 rotate-2 hover:rotate-0 transition-transform duration-500">
+                    <div class="flex items-center gap-2 mb-4 border-b border-slate-800 pb-4">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        <span class="ml-auto text-xs text-slate-600">hire_philip.sql</span>
+                    </div>
+                    <pre class="font-mono text-xs leading-6 overflow-x-auto">
+<span class="text-purple-400">SELECT</span>
+<span class="text-slate-300"> Name, Role,</span>
+<span class="text-yellow-400">       MAX</span>(<span class="text-slate-300">DataInsights</span>) <span class="text-purple-400">AS</span> <span class="text-green-400">StrategicValue</span>
+<span class="text-purple-400">FROM</span>
+<span class="text-slate-300"> TalentPool</span>
+<span class="text-purple-400">WHERE</span>
+<span class="text-slate-300"> Name = </span><span class="text-orange-400">'Philip Tirlone'</span>
+<span class="text-purple-400">AND</span>
+<span class="text-slate-300"> Skills </span><span class="text-purple-400">IN</span> (<span class="text-orange-400">'PowerBI'</span>, <span class="text-orange-400">'SQL'</span>)
+<span class="text-purple-400">GROUP BY</span>
+<span class="text-slate-300"> Name, Role</span>
+<span class="text-purple-400">HAVING</span>
+<span class="text-slate-300"> Passion </span>&gt; <span class="text-orange-400">100%</span>
+<span class="text-purple-400">ORDER BY</span>
+<span class="text-slate-300"> Results </span>
+<span class="text-purple-400">DESC</span>;</pre>
+                </div>
+                <div class="absolute top-10 -right-4 bg-slate-800/80 backdrop-blur border border-slate-700 p-4 rounded-lg shadow-xl -rotate-3 z-20">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-cyan-500/20 p-2 rounded-md text-cyan-400">
+                            <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400">Data Efficiency</div>
+                            <div class="text-lg font-bold text-slate-100">+35% ROI</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-slate-600">
+            <i data-lucide="chevron-down" class="w-6 h-6"></i>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-20 bg-slate-900/50">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-slate-100 mb-8 border-l-4 border-cyan-500 pl-4">Resumo Profissional</h3>
+            <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-lg">
+                <p class="text-lg text-slate-400 leading-relaxed">
+                    Analista de Business Intelligence com mais de <span class="text-cyan-400 font-semibold">10 anos de experiência</span> em tecnologia, atuando em projetos corporativos de dados com foco em tomada de decisão, eficiência operacional e qualidade da informação. Especialista em Power BI, SQL Server, DAX e modelagem de dados.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                    <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 flex items-start gap-4 hover:border-cyan-500/30 transition-colors">
+                        <i data-lucide="layout-dashboard" class="text-cyan-400 shrink-0 w-6 h-6"></i>
+                        <div>
+                            <h4 class="font-semibold text-slate-200">Dashboards Interativos</h4>
+                            <p class="text-sm text-slate-500 mt-1">Criação de visualizações para suporte estratégico.</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 flex items-start gap-4 hover:border-cyan-500/30 transition-colors">
+                        <i data-lucide="database" class="text-cyan-400 shrink-0 w-6 h-6"></i>
+                        <div>
+                            <h4 class="font-semibold text-slate-200">Modelagem de Dados</h4>
+                            <p class="text-sm text-slate-500 mt-1">ETL robusto e garantia de integridade dos dados.</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 flex items-start gap-4 hover:border-cyan-500/30 transition-colors">
+                        <i data-lucide="layers" class="text-cyan-400 shrink-0 w-6 h-6"></i>
+                        <div>
+                            <h4 class="font-semibold text-slate-200">Eficiência Operacional</h4>
+                            <p class="text-sm text-slate-500 mt-1">Automação e gestão de processos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiência Section -->
+    <section id="experiencia" class="py-20">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-slate-100 mb-12 border-l-4 border-cyan-500 pl-4">Experiência Profissional</h3>
+            
+            <div class="relative border-l border-slate-800 ml-4 md:ml-6 space-y-12">
+                
+                <!-- Job 1 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-cyan-500 ring-4 ring-slate-950 shadow-[0_0_10px_rgba(6,182,212,0.5)]"></div>
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                        <h4 class="text-xl font-bold text-slate-100">Analista de BI</h4>
+                        <span class="text-cyan-400 font-mono text-sm bg-cyan-500/10 px-3 py-1 rounded-full w-fit mt-2 md:mt-0">Jul 2024 - Atual</span>
+                    </div>
+                    <h5 class="text-slate-400 mb-4 flex items-center gap-2"><i data-lucide="briefcase" class="w-4 h-4"></i> Universidade Santa Cecília</h5>
+                    <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-slate-700 transition-all">
+                        <ul class="space-y-3 text-slate-400 list-disc list-inside marker:text-cyan-500">
+                            <li>Desenvolvimento de dashboards interativos no Power BI para suporte à tomada de decisão.</li>
+                            <li>Atuação com SQL Server e Power Query em processos de ETL, garantindo integridade e consistência dos dados.</li>
+                            <li>Alinhamento com áreas de negócio e gestão de demandas via Azure DevOps.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-700 ring-4 ring-slate-950"></div>
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                        <h4 class="text-xl font-bold text-slate-200">Analista de Suporte de TI</h4>
+                        <span class="text-slate-500 font-mono text-sm bg-slate-800 px-3 py-1 rounded-full w-fit mt-2 md:mt-0">Jul 2023 - Jul 2024</span>
+                    </div>
+                    <h5 class="text-slate-400 mb-4 flex items-center gap-2"><i data-lucide="briefcase" class="w-4 h-4"></i> Universidade Santa Cecília</h5>
+                    <p class="text-slate-400 mb-4">
+                        Gestão de acessos e identidades no Azure, administração de cadastros no TOTVS RM e suporte técnico a usuários corporativos, assegurando continuidade operacional.
+                    </p>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-800 ring-4 ring-slate-950"></div>
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                        <h4 class="text-xl font-bold text-slate-200">Técnico de Suporte de Informática</h4>
+                        <span class="text-slate-500 font-mono text-sm bg-slate-800 px-3 py-1 rounded-full w-fit mt-2 md:mt-0">Out 2014 - Ago 2023</span>
+                    </div>
+                    <h5 class="text-slate-400 mb-4 flex items-center gap-2"><i data-lucide="briefcase" class="w-4 h-4"></i> Universidade Santa Cecília</h5>
+                    <p class="text-slate-400">
+                        Atendimento técnico, manutenção de equipamentos e suporte à infraestrutura de rede.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-slate-900/50">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-slate-100 mb-12 border-l-4 border-cyan-500 pl-4">Habilidades Técnicas</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Skill Group 1 -->
+                <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center text-blue-400 mb-4">
+                        <i data-lucide="code-2" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-100 mb-3">Linguagens</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded text-sm">SQL (T-SQL)</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded text-sm">DAX</span>
+                    </div>
+                </div>
+
+                <!-- Skill Group 2 -->
+                <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-12 h-12 bg-yellow-500/10 rounded-lg flex items-center justify-center text-yellow-400 mb-4">
+                        <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-100 mb-3">BI & Analytics</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded text-sm">Power BI</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded text-sm">Power Query</span>
+                    </div>
+                </div>
+
+                <!-- Skill Group 3 -->
+                <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-12 h-12 bg-red-500/10 rounded-lg flex items-center justify-center text-red-400 mb-4">
+                        <i data-lucide="database" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-100 mb-3">Banco de Dados</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded text-sm">SQL Server</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded text-sm">Data Warehouse</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded text-sm">ETL</span>
+                    </div>
+                </div>
+
+                <!-- Skill Group 4 -->
+                <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center text-purple-400 mb-4">
+                        <i data-lucide="server" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-100 mb-3">Plataforma</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded text-sm">Azure</span>
+                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded text-sm">TOTVS RM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="educacao" class="py-20">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-slate-100 mb-12 border-l-4 border-cyan-500 pl-4">Formação Acadêmica</h3>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="group bg-gradient-to-br from-slate-900 to-slate-950 p-6 rounded-xl border border-slate-800 hover:border-cyan-500/50 transition-all">
+                    <i data-lucide="graduation-cap" class="text-cyan-400 mb-4 group-hover:scale-110 transition-transform w-8 h-8"></i>
+                    <h4 class="text-xl font-bold text-slate-100 mb-2">Data Analytics</h4>
+                    <p class="text-cyan-400 text-sm mb-1">Xperiun</p>
+                    <p class="text-slate-500 text-xs font-mono">2024 - 2025</p>
+                </div>
+
+                <div class="group bg-gradient-to-br from-slate-900 to-slate-950 p-6 rounded-xl border border-slate-800 hover:border-cyan-500/50 transition-all">
+                    <i data-lucide="graduation-cap" class="text-slate-400 mb-4 group-hover:text-cyan-400 transition-colors w-8 h-8"></i>
+                    <h4 class="text-xl font-bold text-slate-200 mb-2">Pós-graduação em Segurança da Informação</h4>
+                    <p class="text-slate-400 text-sm mb-1">Instituto Líbano</p>
+                    <p class="text-slate-500 text-xs font-mono">2023</p>
+                </div>
+
+                <div class="group bg-gradient-to-br from-slate-900 to-slate-950 p-6 rounded-xl border border-slate-800 hover:border-cyan-500/50 transition-all">
+                    <i data-lucide="graduation-cap" class="text-slate-400 mb-4 group-hover:text-cyan-400 transition-colors w-8 h-8"></i>
+                    <h4 class="text-xl font-bold text-slate-200 mb-2">Engenharia Civil</h4>
+                    <p class="text-slate-400 text-sm mb-1">Universidade Santa Cecília</p>
+                    <p class="text-slate-500 text-xs font-mono">2017</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 py-8 border-t border-slate-900 text-center">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-center gap-6 mb-4">
+               <a href="https://linkedin.com/in/philiptirlone" target="_blank" rel="noreferrer" class="text-slate-500 hover:text-cyan-400 transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+               <a href="mailto:philip_tirlone@hotmail.com" class="text-slate-500 hover:text-cyan-400 transition-colors"><i data-lucide="mail" class="w-5 h-5"></i></a>
+               <a href="https://app.xperiun.com/in/philip" target="_blank" rel="noreferrer" class="text-slate-500 hover:text-cyan-400 transition-colors"><i data-lucide="external-link" class="w-5 h-5"></i></a>
+            </div>
+            <p class="text-slate-600 text-sm">
+                © <script>document.write(new Date().getFullYear())</script> Philip Tirlone. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts for Interactivity -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navbar Scroll Effect and Active Links
+        const navbar = document.getElementById('navbar');
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            // Navbar styling
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-slate-950/90', 'backdrop-blur-md', 'border-b', 'border-slate-800', 'py-3');
+                navbar.classList.remove('bg-transparent', 'py-5');
+            } else {
+                navbar.classList.remove('bg-slate-950/90', 'backdrop-blur-md', 'border-b', 'border-slate-800', 'py-3');
+                navbar.classList.add('bg-transparent', 'py-5');
+            }
+
+            // Active section highlighting
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-cyan-400');
+                link.classList.add('text-slate-400');
+                if (link.getAttribute('data-target') === current) {
+                    link.classList.remove('text-slate-400');
+                    link.classList.add('text-cyan-400');
+                }
+            });
+        });
+
+        // Smooth Scroll function
+        function scrollToId(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
